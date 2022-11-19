@@ -78,7 +78,7 @@ public class TestIO {
     public static File createTempFile() {
         File file;
         try {
-            file = File.createTempFile("temp", "" + System.nanoTime());
+            file = Files.createTempFile("temp", "" + System.nanoTime()).toFile();
         } catch (IOException e) {
             throw new RuntimeException("Couldn't create temporary file!", e);
         }
